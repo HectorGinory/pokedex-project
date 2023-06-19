@@ -1,3 +1,14 @@
+.pokedex_container {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top, rgb(164, 190, 192), white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-direction: column;
+}
+
 .pokemon_card_container {
     border: 1px solid black;
     width: 90%;

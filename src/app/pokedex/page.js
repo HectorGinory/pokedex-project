@@ -39,26 +39,30 @@ export default function Pokedex() {
   };
 
   return (
-    <main>
-      <input
-        name="criteria"
-        placeholder="Ej.: Bulbasaur"
-        type="text"
-        onChange={(e) => criteriaHandler(e)}
-      />
-      <div className={styles.pokemon_card_container}>
-        {pokemonList.length > 0 &&
-          pokemonList.map((pokemon, index) => {
-            return <PokemonCard pokemon={pokemon} key={index} />;
-          })}
+    <div className={styles.pokedex_container}>
+      <div className={styles.pokedex}>
+        <input
+          name="criteria"
+          placeholder="Ej.: Bulbasaur"
+          type="text"
+          onChange={(e) => criteriaHandler(e)}
+        />
+        <div className={styles.pokemon_card_container}>
+          {pokemonList.length > 0 &&
+            pokemonList.map((pokemon, index) => {
+              return <PokemonCard pokemon={pokemon} key={index} />;
+            })}
+        </div>
+        <div className={styles.btn_container}>
+          {page > 0 && (
+            <button onClick={() => setPage(page - 1)}>{page - 1}</button>
+          )}
+          <button>{page}</button>
+          {(page === 0 || page < Math.round(totalPokemon / (page * 20))) && (
+            <button onClick={() => setPage(page + 1)}>{page + 1}</button>
+          )}
+        </div>
       </div>
-      <div className={styles.btn_container}>
-        {page > 0 && <button onClick={()=> setPage(page - 1)}>{page - 1}</button>}
-        <button>{page}</button>
-        {(page === 0 || page < Math.round(totalPokemon/(page*20))) &&
-        <button onClick={()=> setPage(page + 1)}>{page + 1}</button>
-        }
-      </div>
-    </main>
+    </div>
   );
 }

@@ -14,6 +14,7 @@ export default function PokemonDetail() {
         setPokemon(res.data)
         bringMealByFirstPokemonLetter(res.data.name).then((res)=> {
           setMeal(res.data.meals[router.query.id%res.data.meals.length])
+          console.log(res.data.meals[router.query.id%res.data.meals.length])
         })
       })
     }
@@ -24,8 +25,28 @@ export default function PokemonDetail() {
     {(pokemon.name && meal.idMeal ) &&
     <div>
       <p>{pokemon.name}</p>
-      <p>{meal.idMeal}</p>
+      <p>Tipo</p>
+          {pokemon.types.map((slot, index) => {
+            return <p key={index}>{slot.type.name}</p>;
+          })}
+      <p>Habilidades</p>
+      {pokemon.abilities.map((slot, index) => {
+            return <p key={index}>{slot.ability.name}</p>;
+          })}
+      <p>Movimientos:</p>
+      {pokemon.moves.map((slot, index) => {
+            return <p key={index}>{slot.move.name}</p>;
+          })}
     </div>}
+    <div>
+      <p>{meal.idMeal}</p>
+      <div className='image'>
+        <img src={meal.strMealThumb}/>
+      </div>
+      <div className='ingredients'>
+        
+      </div>
+    </div>
     </main>
   );
 }

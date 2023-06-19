@@ -1,0 +1,77 @@
+.home_container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top, rgb(164, 190, 192), white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.menu_container {
+    min-width: 30rem;
+    width: 40vw;
+    min-height: 30rem;
+    height: 40vw;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%,rgb(236, 236, 236) 4%, rgb(192, 192, 192) 5%, rgb(212, 212, 212) 6%, rgb(238, 238, 238) 6.2%, rgb(212, 212, 212) 9.8%, #161616 10%, #161616 14%, transparent 15%),
+                radial-gradient(circle at 50% 50.5%,grey 5%, rgb(59, 55, 55) 5%,rgb(85, 78, 78),  rgb(59, 55, 55) 7%, grey 7%, rgb(75, 73, 73) 14%, transparent 14.2%),
+                radial-gradient(circle at 50% 49.5%,grey 5%, rgb(59, 55, 55) 5%,rgb(85, 78, 78),  rgb(59, 55, 55) 7%, grey 7%, rgb(187, 181, 181) 14%, transparent 14.2%),
+                linear-gradient(to top,rgb(218, 212, 212) 0%, white,white 40%, rgb(212, 211, 211) 47.5%, #000000 47.5%,#161616, #161616,rgb(70, 70, 70) 52.5%, rgb(201, 2, 2) 52.5%,red, rgb(255, 116, 116) 95%,rgb(255, 176, 176) 100%);
+    box-shadow: inset 0 0 .8rem rgba(46, 1, 1, 0.452);
+    border: inset .2rem solid rgba(0, 0, 0, 0.281);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.menu_container h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-family: pokemonSolid;
+    letter-spacing: .7rem;
+    color: yellow;
+    text-shadow: rgb(0, 0, 255) 4px 0px 0px, rgb(0, 0, 255) 3.87565px 0.989616px 0px, rgb(0, 0, 255) 3.51033px 1.9177px 0px, rgb(0, 0, 255) 2.92676px 2.72656px 0px, rgb(0, 0, 255) 2.16121px 3.36588px 0px, rgb(0, 0, 255) 1.26129px 3.79594px 0px, rgb(0, 0, 255) 0.282949px 3.98998px 0px, rgb(0, 0, 255) -0.712984px 3.93594px 0px, rgb(0, 0, 255) -1.66459px 3.63719px 0px, rgb(0, 0, 255) -2.51269px 3.11229px 0px, rgb(0, 0, 255) -3.20457px 2.39389px 0px, rgb(0, 0, 255) -3.69721px 1.52664px 0px, rgb(0, 0, 255) -3.95997px 0.56448px 0px, rgb(0, 0, 255) -3.97652px -0.432781px 0px, rgb(0, 0, 255) -3.74583px -1.40313px 0px, rgb(0, 0, 255) -3.28224px -2.28625px 0px, rgb(0, 0, 255) -2.61457px -3.02721px 0px, rgb(0, 0, 255) -1.78435px -3.57996px 0px, rgb(0, 0, 255) -0.843183px -3.91012px 0px, rgb(0, 0, 255) 0.150409px -3.99717px 0px, rgb(0, 0, 255) 1.13465px -3.8357px 0px, rgb(0, 0, 255) 2.04834px -3.43574px 0px, rgb(0, 0, 255) 2.83468px -2.82216px 0px, rgb(0, 0, 255) 3.44477px -2.03312px 0px, rgb(0, 0, 255) 3.84068px -1.11766px 0px, rgb(0, 0, 255) 3.9978px -0.132717px 0px;
+}
+
+.menu_container .text_menu {
+    width: 90%;
+    background: rgba(255, 255, 255, 0.514);
+    padding: 1rem .5rem;
+    border-radius: .8rem;
+    margin: 2rem 0;
+    backdrop-filter: blur(.4rem);
+    border: .3rem solid rgb(32, 0, 0);
+    text-align: center;
+    font-weight: 600;
+}
+
+.menu_container a button {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    transition: .3s;
+    color: rgb(131, 13, 19);
+}
+
+.menu_container a:hover button{
+    letter-spacing: .4rem;
+    color: rgb(255, 39, 39);
+}
+
+@media (max-width: 460px) {
+    .menu_container h1 {
+        font-size: 2rem;
+    }
+    .menu_container .text_menu {
+        width: 90vw;
+    }
+    .menu_container a button {
+        font-size: 1.4rem;
+    }
+
+    .menu_container a:hover button {
+        letter-spacing: .3rem;
+    }
+}

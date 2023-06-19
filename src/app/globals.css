@@ -2,12 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-
-  }
+@font-face {
+  font-family: "pokemonSolid";
+  src: url("../../public/fonts/pokemon/PokemonSolid.ttf");
 }

@@ -1,9 +1,11 @@
+import styles from "../styles/pages/home.module.css";
+
 export default function Home() {
   return (
-    <main>
-      <div className="main-menu">
+    <div className={styles.home_container}>
+      <div className={styles.menu_container}>
         <h1>Pokemon Web</h1>
-        <p>
+        <p className={styles.text_menu}>
           Bienvenid@ a esta web dónde podras encontrar toda la información
           acerca de todos los pokemons
         </p>
@@ -11,6 +13,6 @@ export default function Home() {
           <button>Acceder a la pokedex</button>
         </a>
       </div>
-    </main>
+    </div>
   );
 }
