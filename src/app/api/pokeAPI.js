@@ -19,7 +19,7 @@ export const bringPokemonByRegExp = async(page, criteria) => {
     const paginatePokemon = filteredPokemon.slice(firstIndexOfPage, lastIndexOfPage)
     const pokemonList = await bringDetailInfoPokemonList(paginatePokemon)
     const data = {
-        totalPokemon: allPokemon.length,
+        totalPokemon: filteredPokemon.length,
         pageNumber: page,
         pokemonList: pokemonList
     }
