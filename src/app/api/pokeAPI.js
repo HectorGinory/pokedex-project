@@ -10,7 +10,21 @@ export const bring20PokemonByNumberPage = async (page) => {
     }
     return data
 }
-
+export const bringPokemonByRegExp = async(page, criteria) => {
+    const allPokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=1281`)
+    const regExp = new RegExp(criteria)
+    const filteredPokemon = allPokemon.data.results.filter((pokemon) => regExp.test(pokemon.name))
+    const firstIndexOfPage = page*20
+    const lastIndexOfPage = (page+1)*20 > filteredPokemon.length ? filteredPokemon.length : (page+1)*20
+    const paginatePokemon = filteredPokemon.slice(firstIndexOfPage, lastIndexOfPage)
+    const pokemonList = await bringDetailInfoPokemonList(paginatePokemon)
+    const data = {
+        totalPokemon: allPokemon.length,
+        pageNumber: page,
+        pokemonList: pokemonList
+    }
+    return data
+}
 const bringDetailInfoPokemonList = async (results) => {
     const pokemonList = []
     for (let i = 0; i < results.length; i++) {

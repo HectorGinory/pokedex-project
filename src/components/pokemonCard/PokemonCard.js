@@ -18,8 +18,8 @@ export default function PokemonCard({ pokemon }) {
         <p className={styles.name}>{firstToUpperCase(pokemon.name)}</p>
         <div className={styles.types}>
           Tipo:
-          {pokemon.types.map((slot) => {
-            return <p>{firstToUpperCase(slot.type.name)}</p>;
+          {pokemon.types.map((slot, index) => {
+            return <p key={index}>{firstToUpperCase(slot.type.name)}</p>;
           })}
         </div>
       </a>

@@ -1,7 +1,7 @@
 "use client";
 import PokemonCard from "@/components/pokemonCard/PokemonCard";
 import { useEffect, useState } from "react";
-import { bring20PokemonByNumberPage } from "../api/pokeAPI";
+import { bring20PokemonByNumberPage, bringPokemonByRegExp } from "../api/pokeAPI";
 
 export default function Pokedex() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -9,11 +9,20 @@ export default function Pokedex() {
   const [criteria, setCriteria] = useState("");
 
   useEffect(() => {
-    bring20PokemonByNumberPage(page).then((res) => {
-      setPokemonList(res.pokemonList);
-    });
-  }, []);
-
+    const bringPokemons = setTimeout(() => {
+      if (criteria === "") {
+        bring20PokemonByNumberPage(page).then((res) => {
+          setPokemonList(res.pokemonList);
+        });
+      } else {
+        bringPokemonByRegExp(page, criteria).then((res) => {
+          setPokemonList(res.pokemonList)
+        })
+      }
+    }, 375)
+    
+    return () => clearTimeout(bringPokemons)
+  }, [criteria, page]);
 
   const criteriaHandler = (e) => {
     setCriteria(e.target.value);
