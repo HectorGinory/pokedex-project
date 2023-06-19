@@ -1,20 +1,28 @@
-export default function PokemonCard({pokemon}) {
-    return (
-      <div className="pokemon-card">
-      <a href={`/pokemonDetail/${pokemon.id}`}>
-      <div className="pokemon-img">
-            <img src={pokemon.sprites.front_default} alt={`${pokemon.name}-image`}/>
+import styles from "../../styles/components/pokemonCard.module.css";
+
+export default function PokemonCard({ pokemon }) {
+  const firstToUpperCase = (string) => {
+    const newString =
+      string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+    return newString;
+  };
+  return (
+    <div className={styles.pokemonCard}>
+      <a href={`/pokemonDetail/${pokemon.id}`} className={styles.container}>
+        <div className={styles.pokemonImgContainer}>
+          <img
+            src={pokemon.sprites.front_default}
+            alt={`${pokemon.name}-image`}
+          />
         </div>
-        <p>{pokemon.name}</p>
-        <div className="types">
-            Tipo:
-            {pokemon.types.map((slot) => {
-               return (
-                <p>{slot.type.name}</p>
-               )
-            } )}
+        <p className={styles.name}>{firstToUpperCase(pokemon.name)}</p>
+        <div className={styles.types}>
+          Tipo:
+          {pokemon.types.map((slot) => {
+            return <p>{firstToUpperCase(slot.type.name)}</p>;
+          })}
         </div>
       </a>
-      </div>
-    );
-  }
+    </div>
+  );
+}
