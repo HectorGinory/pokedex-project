@@ -3,6 +3,8 @@ import PokemonCard from "@/components/pokemonCard/PokemonCard";
 import { useEffect, useState } from "react";
 import { bring20PokemonByNumberPage, bringPokemonByRegExp } from "../api/pokeAPI";
 
+import styles from '../../styles/pages/pokedex.module.css'
+
 export default function Pokedex() {
   const [pokemonList, setPokemonList] = useState([]);
   const [page, setPage] = useState(0);
@@ -36,7 +38,7 @@ export default function Pokedex() {
         type="text"
         onChange={(e) => criteriaHandler(e)}
       />
-      <div className="pokemonCardContainer">
+      <div className={styles.pokemon_card_container}>
         {pokemonList.length > 0 &&
           pokemonList.map((pokemon, index) => {
             return <PokemonCard pokemon={pokemon} key={index} />;

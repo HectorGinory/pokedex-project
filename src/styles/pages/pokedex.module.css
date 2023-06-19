@@ -1,0 +1,12 @@
+.pokemon_card_container {
+    border: 1px solid black;
+    width: 90%;
+    display: flex;
+    gap: 1rem;
+    height: 25rem;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
