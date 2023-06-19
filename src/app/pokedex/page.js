@@ -18,15 +18,17 @@ export default function Pokedex() {
     const bringPokemons = setTimeout(() => {
       if (criteria === "") {
         bring20PokemonByNumberPage(page).then((res) => {
-          setPokemonList(res.pokemonList);
-          setTotalPokemon(res.totalPokemon);
-          console.log(res.totalPokemon);
-          console.log(page * 20);
+          if(res.pageNumber === page) {
+            setPokemonList(res.pokemonList);
+            setTotalPokemon(res.totalPokemon);
+          }
         });
       } else {
         bringPokemonByRegExp(page, criteria).then((res) => {
+          if(res.pageNumber === page) {
           setPokemonList(res.pokemonList);
           setTotalPokemon(res.totalPokemon);
+          }
         });
       }
     }, 375);
@@ -36,6 +38,7 @@ export default function Pokedex() {
 
   const criteriaHandler = (e) => {
     setCriteria(e.target.value);
+    setPage(0)
   };
 
   return (
@@ -55,12 +58,15 @@ export default function Pokedex() {
         </div>
         <div className={styles.btn_container}>
           {page > 0 && (
-            <button onClick={() => setPage(page - 1)}>{page - 1}</button>
+            <button onClick={() => setPage(page - 1)} className={styles.nonpage_btn}>{page}</button>
           )}
-          <button>{page}</button>
-          {(page === 0 || page < Math.round(totalPokemon / (page * 20))) && (
-            <button onClick={() => setPage(page + 1)}>{page + 1}</button>
+          <button className={styles.page_btn}>{page + 1}</button>
+          {(page < Math.round(totalPokemon/20)) && (
+            <button onClick={() => setPage(page + 1)} className={styles.nonpage_btn}>{page + 2}</button>
           )}
+        </div>
+        <div className={styles.home_btn}>
+          <a href="/">Volver al inicio</a>
         </div>
       </div>
     </div>

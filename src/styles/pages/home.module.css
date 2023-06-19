@@ -1,77 +1,186 @@
 .home_container {
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(to top, rgb(164, 190, 192), white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top, rgb(164, 190, 192), white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .menu_container {
-    min-width: 30rem;
-    width: 40vw;
-    min-height: 30rem;
-    height: 40vw;
-    border-radius: 50%;
-    background: radial-gradient(circle at 50% 50%,rgb(236, 236, 236) 4%, rgb(192, 192, 192) 5%, rgb(212, 212, 212) 6%, rgb(238, 238, 238) 6.2%, rgb(212, 212, 212) 9.8%, #161616 10%, #161616 14%, transparent 15%),
-                radial-gradient(circle at 50% 50.5%,grey 5%, rgb(59, 55, 55) 5%,rgb(85, 78, 78),  rgb(59, 55, 55) 7%, grey 7%, rgb(75, 73, 73) 14%, transparent 14.2%),
-                radial-gradient(circle at 50% 49.5%,grey 5%, rgb(59, 55, 55) 5%,rgb(85, 78, 78),  rgb(59, 55, 55) 7%, grey 7%, rgb(187, 181, 181) 14%, transparent 14.2%),
-                linear-gradient(to top,rgb(218, 212, 212) 0%, white,white 40%, rgb(212, 211, 211) 47.5%, #000000 47.5%,#161616, #161616,rgb(70, 70, 70) 52.5%, rgb(201, 2, 2) 52.5%,red, rgb(255, 116, 116) 95%,rgb(255, 176, 176) 100%);
-    box-shadow: inset 0 0 .8rem rgba(46, 1, 1, 0.452);
-    border: inset .2rem solid rgba(0, 0, 0, 0.281);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  width: 30rem;
+  height: 40rem;
+  border: 1px solid rgb(90, 0, 0);
+  border-radius: 1rem;
+  background: radial-gradient(
+      circle at 12% 9%,
+      rgb(51, 214, 255) 1%,
+      rgb(25, 191, 233) 2%,
+      rgb(0, 174, 255) 3%,
+      white 3.2%,
+      rgb(243, 243, 243) 4%,
+      rgba(0, 0, 0, 0.342) 4.2%,
+      transparent 4.4%
+    ),
+    linear-gradient(to top, rgb(119, 4, 4), rgb(219, 7, 7));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1.3rem 0.5rem;
+  box-shadow: inset 0.2rem 0.2rem 0.4rem rgba(255, 255, 255, 0.363),
+    inset -0.2rem -0.2rem 0.4rem rgba(0, 0, 0, 0.575),
+    .2rem .2rem .6rem black;
 }
-
 .menu_container h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    font-family: pokemonSolid;
-    letter-spacing: .7rem;
-    color: yellow;
-    text-shadow: rgb(0, 0, 255) 4px 0px 0px, rgb(0, 0, 255) 3.87565px 0.989616px 0px, rgb(0, 0, 255) 3.51033px 1.9177px 0px, rgb(0, 0, 255) 2.92676px 2.72656px 0px, rgb(0, 0, 255) 2.16121px 3.36588px 0px, rgb(0, 0, 255) 1.26129px 3.79594px 0px, rgb(0, 0, 255) 0.282949px 3.98998px 0px, rgb(0, 0, 255) -0.712984px 3.93594px 0px, rgb(0, 0, 255) -1.66459px 3.63719px 0px, rgb(0, 0, 255) -2.51269px 3.11229px 0px, rgb(0, 0, 255) -3.20457px 2.39389px 0px, rgb(0, 0, 255) -3.69721px 1.52664px 0px, rgb(0, 0, 255) -3.95997px 0.56448px 0px, rgb(0, 0, 255) -3.97652px -0.432781px 0px, rgb(0, 0, 255) -3.74583px -1.40313px 0px, rgb(0, 0, 255) -3.28224px -2.28625px 0px, rgb(0, 0, 255) -2.61457px -3.02721px 0px, rgb(0, 0, 255) -1.78435px -3.57996px 0px, rgb(0, 0, 255) -0.843183px -3.91012px 0px, rgb(0, 0, 255) 0.150409px -3.99717px 0px, rgb(0, 0, 255) 1.13465px -3.8357px 0px, rgb(0, 0, 255) 2.04834px -3.43574px 0px, rgb(0, 0, 255) 2.83468px -2.82216px 0px, rgb(0, 0, 255) 3.44477px -2.03312px 0px, rgb(0, 0, 255) 3.84068px -1.11766px 0px, rgb(0, 0, 255) 3.9978px -0.132717px 0px;
+  font-size: 2.5rem;
+  font-weight: 200;
+  letter-spacing: 0.3rem;
+  color: rgb(241, 218, 11);
+  font-family: pokemonSolid;
+  transform: translateX(1rem);
+  text-shadow: rgb(0, 0, 120) 4px 0px 0px, rgb(0, 0, 120) 3.87565px 0.989616px 0px,
+    rgb(0, 0, 120) 3.51033px 1.9177px 0px, rgb(0, 0, 120) 2.92676px 2.72656px 0px,
+    rgb(0, 0, 120) 2.16121px 3.36588px 0px, rgb(0, 0, 120) 1.26129px 3.79594px 0px,
+    rgb(0, 0, 120) 0.282949px 3.98998px 0px,
+    rgb(0, 0, 120) -0.712984px 3.93594px 0px,
+    rgb(0, 0, 120) -1.66459px 3.63719px 0px,
+    rgb(0, 0, 120) -2.51269px 3.11229px 0px,
+    rgb(0, 0, 120) -3.20457px 2.39389px 0px,
+    rgb(0, 0, 120) -3.69721px 1.52664px 0px,
+    rgb(0, 0, 120) -3.95997px 0.56448px 0px,
+    rgb(0, 0, 120) -3.97652px -0.432781px 0px,
+    rgb(0, 0, 120) -3.74583px -1.40313px 0px,
+    rgb(0, 0, 120) -3.28224px -2.28625px 0px,
+    rgb(0, 0, 120) -2.61457px -3.02721px 0px,
+    rgb(0, 0, 120) -1.78435px -3.57996px 0px,
+    rgb(0, 0, 120) -0.843183px -3.91012px 0px,
+    rgb(0, 0, 120) 0.150409px -3.99717px 0px,
+    rgb(0, 0, 120) 1.13465px -3.8357px 0px,
+    rgb(0, 0, 120) 2.04834px -3.43574px 0px,
+    rgb(0, 0, 120) 2.83468px -2.82216px 0px,
+    rgb(0, 0, 120) 3.44477px -2.03312px 0px,
+    rgb(0, 0, 120) 3.84068px -1.11766px 0px,
+    rgb(0, 0, 120) 3.9978px -0.132717px 0px;
 }
 
 .menu_container .text_menu {
-    width: 90%;
-    background: rgba(255, 255, 255, 0.514);
-    padding: 1rem .5rem;
-    border-radius: .8rem;
-    margin: 2rem 0;
-    backdrop-filter: blur(.4rem);
-    border: .3rem solid rgb(32, 0, 0);
-    text-align: center;
-    font-weight: 600;
+  width: 80%;
+  background: rgb(0, 22, 2);
+  padding: 2rem;
+  border-radius: 0.1rem 0.1rem 0.1rem 2rem;
+  margin: 3rem 0;
+  box-shadow: 0 0 .5rem grey,
+            0 0 0 1rem rgb(218, 218, 218),
+            inset 0 0 1rem rgba(209, 255, 2, 0.644);
+  box-sizing: border-box;
+  text-align: justify;
+  height: 13rem;
+  font-weight: 400;
+  color: rgb(64, 141, 64);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .menu_container a button {
-    font-size: 1.6rem;
-    font-weight: 600;
-    letter-spacing: .2rem;
-    transition: .3s;
-    color: rgb(131, 13, 19);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  transition: 0.2s;
+  color: rgb(7, 161, 2);
+  animation: btn-light 1.7s infinite;
 }
 
-.menu_container a:hover button{
-    letter-spacing: .4rem;
-    color: rgb(255, 39, 39);
+.menu_container a:hover button {
+  color: rgb(208, 255, 0);
+  letter-spacing: .15rem;
+  animation: none;
 }
 
+.decoration_pokedex {
+    width: 50%;
+    margin-top: 1rem;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.decoration_pokedex .stick {
+    height: 8rem;
+    width: 3rem;
+    background: linear-gradient(to top, black, rgb(10, 10, 10) 40% ,rgb(20, 20, 20), rgb(10, 10, 10) 60%,black);
+    border-radius: .3rem;
+}
+
+.decoration_pokedex .stick:nth-child(2) {
+    background: linear-gradient(to top, black, rgb(10, 10, 10) 40% ,rgba(10, 10, 10, 0.322), rgb(10, 10, 10) 60%,black);
+    transform: rotate(90deg) translateX(-8rem);
+}
+
+.btn {
+    background: radial-gradient(white 50%, rgb(0, 0, 0));
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.658);
+}
+
+.btn:first-child {
+    transform: translateX(4rem);
+}
+
+.btn:first-child:hover {
+    filter: brightness(.8);
+    transition: .2s;
+}
 @media (max-width: 460px) {
-    .menu_container h1 {
-        font-size: 2rem;
+    .menu_container {
+        width: 20rem;
+        height: 30rem;
     }
-    .menu_container .text_menu {
-        width: 90vw;
-    }
-    .menu_container a button {
-        font-size: 1.4rem;
-    }
+  .menu_container h1 {
+    font-size: 1.5rem;
+  }
+  .menu_container .text_menu {
+  height: 10rem;
+  font-size: .7rem;
+  }
+  .menu_container a button {
+    font-size: .8rem;
+    letter-spacing: 0;
+  }
 
-    .menu_container a:hover button {
-        letter-spacing: .3rem;
+  .decoration_pokedex .stick {
+    width: 2rem;
+    height: 5rem;
+  }
+
+  .decoration_pokedex .stick:nth-child(2){
+    transform: rotate(90deg) translateX(-5rem);
+  }
+  .btn {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.btn:first-child {
+    transform: translateX(2.5rem);
+}
+}
+
+@keyframes btn-light {
+    0% {
+        color: rgb(18, 102, 16);
     }
+    50% {
+  color: rgb(37, 168, 11);
+    }
+    100% {
+  color: rgb(18, 102, 16);
+          }
 }
