@@ -25,6 +25,12 @@ export const bringPokemonByRegExp = async(page, criteria) => {
     }
     return data
 }
+
+export const bringPokemonById = async(id) => {
+    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    return res
+}
+
 const bringDetailInfoPokemonList = async (results) => {
     const pokemonList = []
     for (let i = 0; i < results.length; i++) {
