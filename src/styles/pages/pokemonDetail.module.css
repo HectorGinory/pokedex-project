@@ -235,12 +235,15 @@
   box-sizing: border-box;
   width: 100%;
   height: 30%;
+  padding-left: .5rem;
   gap: 1rem;
 }
 .food_container .meal_info {
   width: 50%;
   height: 100%;
   overflow: hidden;
+  box-sizing: border-box;
+  border-left: 2px solid red;
 }
 .food_container .foodImg_container {
   display: flex;
@@ -264,7 +267,7 @@
 }
 
 .food_container img {
-  width: 100%;
+  height: 100%;
   aspect-ratio: 1;
 }
 @media (max-width: 850px) {
@@ -293,7 +296,8 @@
   .food_container .meal_info {
     width: 100%;
     height: auto;
-  }
+  border-left: 0 solid red;
+}
 }
 @media (max-width: 500px) {
   .banner img {
