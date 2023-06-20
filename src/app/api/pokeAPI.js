@@ -8,6 +8,7 @@ export const bring20PokemonByNumberPage = async (page) => {
         pageNumber: page,
         pokemonList: pokemonList
     }
+
     return data
 }
 export const bringPokemonByRegExp = async(page, criteria) => {
@@ -23,11 +24,13 @@ export const bringPokemonByRegExp = async(page, criteria) => {
         pageNumber: page,
         pokemonList: pokemonList
     }
+
     return data
 }
 
 export const bringPokemonById = async(id) => {
     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+
     return res
 }
 
@@ -37,5 +40,6 @@ const bringDetailInfoPokemonList = async (results) => {
         const pokemonData = await axios.get(results[i].url)
         pokemonList.push(pokemonData.data)
     }
+    
     return pokemonList
 }

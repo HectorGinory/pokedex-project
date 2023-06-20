@@ -7,9 +7,11 @@ export const bringMealByFirstPokemonLetter = async(pokemonName) => {
             meals: null
         }
     }
+    
     while(!res.data.meals) {
         res = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?f=${pokemonName.charAt(charIndex)}`)
         charIndex++
     }
+
     return res
 }

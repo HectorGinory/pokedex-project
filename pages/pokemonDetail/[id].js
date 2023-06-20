@@ -16,7 +16,6 @@ export default function PokemonDetail() {
         setPokemon(res.data);
         bringMealByFirstPokemonLetter(res.data.name).then((res) => {
           setMeal(res.data.meals[router.query.id % res.data.meals.length]);
-          console.log(res.data.meals[router.query.id % res.data.meals.length]);
         });
       });
     }
@@ -26,7 +25,6 @@ export default function PokemonDetail() {
     if (meal.strArea) {
       const updatedIngredients = [];
       for (let i = 1; i <= 20; i++) {
-        console.log(meal[`strIngredient${i}`]);
         if (meal[`strIngredient${i}`]) {
           updatedIngredients.push(meal[`strIngredient${i}`]);
         }
